@@ -12,7 +12,7 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('');
 
   const reqURL = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
@@ -38,7 +38,7 @@ const App = () => {
     setSearch('');
   }
 
-  const loadingDiv = query === '' ? <p>this</p> : <p></p>
+  const loadingDiv = query === '' ? <Recipe /> : <p></p>
 
   return (
     <div className="App">
@@ -46,7 +46,7 @@ const App = () => {
       <div className={query === '' ? 'div-down' : null }>
         <h1 className='title'>Find your perfect Recipe</h1>
         <form onSubmit={getSearch} className="search-form">
-          <input type="text" className="search-bar" placeholder="What do you want to eat?" value={search} onChange={updateSearch}/>
+          <input type="text" className="search-bar" placeholder="Particular Ingredient? Full Recipe?" value={search} onChange={updateSearch}/>
           <button className="search-button" type="submit">Search</button>
         </form>
       </div>
