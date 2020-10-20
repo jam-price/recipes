@@ -1,0 +1,10 @@
+.checkbox {
+    display: inline;
+    width: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    white-space: nowrap;
+    border: none;
+    border-radius: 10px;
+    font-size: larger;
+}

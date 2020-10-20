@@ -15,7 +15,7 @@ const Recipe = ({ title, calories, image, ingredients, url, categories }) => {
             <p><span className="calories">Total Recipe Calories:</span> {cal}</p>
             <h2 className="ingredient">Ingredients</h2>
             <ul>
-                {ingredients.map(ingredient => <li key={ingredient.text}>{ingredient.text}</li>)}
+                {ingredients.map(ingredient => <li key={ingredient.index}>{ingredient.text}</li>)}
             </ul>
             <button className="recipe-link" href={url}>Click Here for the full recipe</button>
 
