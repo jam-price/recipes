@@ -20,15 +20,15 @@ const App = () => {
   const [treeNutFree, setTreeNutFree] = useState(false);
 
   let reqURL = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
-  // let reqURL = 'www.this.com';
+  
+  // add dietary sort options to URL if true
   if (lowCarb){reqURL += '&diet=low-carb'};
   if (lowFat){reqURL += '&diet=low-fat'};
   if (vegan){reqURL += '&health=vegan'};
   if (vegetarian){reqURL += '&health=vegetarian'};
   if (peanutFree){reqURL += '&health=peanut-free'};
   if (treeNutFree){reqURL += '&health=tree-nut-free'};
-
-  console.log(reqURL);  
+  console.log(reqURL)
 
   useEffect(() => {
     getRecipes()
@@ -38,7 +38,7 @@ const App = () => {
     const response = await fetch(reqURL);
     const data = await response.json();
     setRecipes(data.hits);
-    console.log(data.hits)
+    console.log(data.hits);
   }
 
   const updateSearch = ({target}) => {
@@ -52,7 +52,7 @@ const App = () => {
     setSearch('');
   }
 
-  const loadingDiv = query === '' ? <Recipe /> : <p></p>
+  const loadingDiv = query === '' ? <p></p> : <h2 className="recipes-head" >Recipes</h2>
 
   return (
     <div className="App">
