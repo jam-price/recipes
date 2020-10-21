@@ -17,7 +17,7 @@ const Recipe = ({ title, calories, image, ingredients, url, categories }) => {
             <ul>
                 {ingredients.map(ingredient => <li key={ingredient.index}>{ingredient.text}</li>)}
             </ul>
-            <button className="recipe-link" href={url}>Click Here for the full recipe</button>
+            <a className="recipe-link" target="_blank" rel='noreferrer noopener' href={url}>CLICK HERE FOR THE FULL RECIPE</a>
 
         </div>
     )
