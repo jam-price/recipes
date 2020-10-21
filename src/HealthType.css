@@ -1,10 +1,23 @@
 .checkbox {
     display: inline;
     width: 5%;
+    height: auto;
     margin-left: 2%;
     margin-right: 2%;
+    margin-bottom: 2%;
     white-space: nowrap;
     border: none;
     border-radius: 10px;
     font-size: larger;
+    padding: 5px;
+}
+
+.health-form {
+    width: 60%;
+    height: auto;
+    background-color: #23a24d;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+    color: black;
 }

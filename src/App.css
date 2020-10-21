@@ -2,38 +2,59 @@
   text-align: center;
   min-height: 100vh;
   background: rgb(255,0,0);
-  background: linear-gradient(139deg, rgba(255,0,0,0.8575805322128851) 0%, rgba(121,9,9,0.14889705882352944) 60%, rgba(255,0,0,0.87718837535014) 100%);
+  background: linear-gradient(139deg, rgba(255,0,0,0.8575805322128851) 0%, rgba(170, 10, 10, 0.664) 60%, rgba(255, 0, 0, 0.534) 100%);
   padding: 0;
   margin: 0;
 }
 
+.pepper {
+  height: 15vh;
+}
+
 .title {
   margin: 0;
-  padding-top: 5%;
+  padding-top: 2%;
   padding-bottom: 5%;
   font-size: 3rem;
-  color: black;
+  color:rgb(255, 255, 255);
 }
 
 .div-down {
-  padding-top: 10% ;
+  padding-top: 5% ;
   transition: 0.5s ease-in;
 }
 
 .search-form {
   min-height: 10vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 2%;
 }
 
 .search-bar {
-  width: 40%;
+  min-width: 40%;
   border: none;
   padding: 20px;
   border-radius: 10px;
   font-size: larger;
+}
+
+@media only screen and (max-width: 700px){
+  .search-bar {
+    width: 80%;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .search-button {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .clear-button {
+    display: inline-block;
+    margin-left: 10px;
+  }
 }
 
 .search-bar :focus, input:focus {
@@ -41,7 +62,7 @@
 }
 
 .search-button {
-  background-color: rgba(250, 0, 0, 0.781);
+  background-color: rgb(170, 0, 0);
   padding: 20px;
   border-radius: 10px;
   font-size: larger;
@@ -50,9 +71,19 @@
   color: white;
 }
 
-button:hover {
-  background-color: #f0262691;
-  color: rgba(0, 0, 0, 0.418);
+.search-button:hover {
+  background-color:  #23a24d;
+  color: white;
+}
+
+.clear-button {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: larger;
+  border: none;
+  cursor: pointer;
+  color: rgb(255, 0, 0);
 }
 
 .recipes {
@@ -66,6 +97,24 @@ button:hover {
 li {
   list-style: none;
   padding: 1vh;
+}
+
+.filter-button{
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  font-size: larger;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  color: rgb(255, 0, 0);
+}
+
+.filter-button:hover,
+.clear-button:hover{
+  background-color:  #23a24d;
+  color: white;
 }
 
 .recipes-head {

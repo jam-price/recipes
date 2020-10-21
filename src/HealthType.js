@@ -1,13 +1,14 @@
 import React from 'react';
 import './HealthType.css';
 
-const MealMenu = (props) => {
+const HealthType = (props) => {
     return(
         <div>
-            <form>
+            <form className="health-form">
             <div className="checkbox">
                     <label>
-                        <input type="checkbox" 
+                        <input 
+                        type="checkbox" 
                         value="low-carb" 
                         checked={props.lowCarb === true} 
                         onChange={props.lowCarb === true ? () => props.setLowCarb(false) : () => props.setLowCarb(true)} 
@@ -72,4 +73,4 @@ const MealMenu = (props) => {
 
 }
 
-export default MealMenu
+export default HealthType

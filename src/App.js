@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import { useEffect, useState } from 'react';
 import Recipe from './Recipe';
-import MealMenu from './HealthType';
+import HealthType from './HealthType';
+import pepper from './pepper.svg'
 
 const App = () => {
 
@@ -49,7 +50,17 @@ const App = () => {
   const getSearch = (e) => {
     e.preventDefault();
     setQuery(search);
+  }
+
+  const filterSearch = () => {
+    setQuery(search);
+    getRecipes();
+  }
+
+  const clearSearch = () => {
     setSearch('');
+    setQuery('');
+    setRecipes([]);
   }
 
   const loadingDiv = query === '' ? <p></p> : <h2 className="recipes-head" >Recipes</h2>
@@ -58,12 +69,14 @@ const App = () => {
     <div className="App">
     {/* When loading horizontally centre div, move to top when loaded*/}
       <div className={query === '' ? 'div-down' : null }>
+        <img className="pepper" src={pepper} alt="Pepper Logo"></img>
         <h1 className='title'>Find your perfect Recipe</h1>
         <form onSubmit={getSearch} className="search-form">
-          <input type="text" className="search-bar" placeholder="Particular Ingredient? Full Recipe?" value={search} onChange={updateSearch}/>
+          <input type="text" className="search-bar" placeholder="Search by Ingredients or Recipe" value={search} onChange={updateSearch}/>
           <button className="search-button" type="submit">Search</button>
+          <button className="clear-button" onClick={clearSearch}>Start Again</button>
         </form>
-        <MealMenu 
+        <HealthType 
           lowCarb = {lowCarb}
           setLowCarb = {setLowCarb}
           lowFat = {lowFat}
@@ -77,6 +90,9 @@ const App = () => {
           treeNutFree = {treeNutFree}
           setTreeNutFree = {setTreeNutFree}
          />
+      </div>
+      <div className="filter">
+        <button onClick={filterSearch} className="filter-button">Filter</button>
       </div>
       <div className="recipes">
       {loadingDiv}
